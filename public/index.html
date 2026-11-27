@@ -1,0 +1,697 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>QueueLess Clinic | Care without the wait</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Navigation Bar -->
+    <header class="topbar">
+
+        <a class="brand" href="#home" onclick="go('home'); return false">
+            <span class="brand-mark">✚</span>
+
+            <span>
+                <b>MEDICARE</b>
+                <small>RHU • BULAN</small>
+            </span>
+        </a>
+
+        <nav id="publicNav">
+            <a href="#home" onclick="go('home'); return false">Home</a>
+            <a href="#about" onclick="go('about'); return false">About Us</a>
+            <a href="#services" onclick="go('services'); return false">Services</a>
+            <a href="#contact" onclick="go('contact'); return false">Contact</a>
+
+            <a
+                class="nav-login"
+                href="#login"
+                onclick="showAuth('login'); return false"
+            >
+                Log In
+            </a>
+
+            <a
+                class="nav-cta"
+                href="#signup"
+                onclick="showAuth('signup'); return false"
+            >
+                Sign In
+            </a>
+        </nav>
+
+        <!-- Logged-in User Navigation -->
+        <div id="userNav" class="user-nav hidden">
+            <span id="welcomeName"></span>
+
+            <button class="btn btn-light btn-sm" onclick="openDashboard()">
+                Dashboard
+            </button>
+
+            <button class="btn btn-outline btn-sm" onclick="logout()">
+                Log out
+            </button>
+        </div>
+
+        <button
+            class="mobile-menu"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="publicNav"
+            aria-expanded="false"
+            onclick="
+                const nav = document.getElementById('publicNav');
+                const isOpen = nav.classList.toggle('open');
+                this.setAttribute('aria-expanded', isOpen);
+            "
+        >
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- Main Website Content -->
+    <main id="app">
+
+        <!-- HERO SECTION -->
+        <section id="home" class="hero section">
+
+            <div class="hero-copy">
+
+                <span class="eyebrow">
+                    <i></i>
+                    YOUR COMMUNITY HEALTH PARTNER
+                </span>
+
+                <h1>
+                    Your Health,<br>
+                    <em>Our Priority.</em>
+                </h1>
+
+                <p class="hero-sub">
+                    To Give People the Opportunity<br>
+                    for a Healthy Tomorrow.
+                </p>
+
+                <p class="muted">
+                    Accessible, compassionate healthcare for every family in Bulan.
+                </p>
+
+                <div class="hero-actions">
+
+                    <button
+                        class="btn btn-primary"
+                        onclick="showAuth('signup')"
+                    >
+                        Get started <span>→</span>
+                    </button>
+
+                    <button
+                        class="btn btn-text"
+                        onclick="go('services')"
+                    >
+                        Explore our services
+                    </button>
+
+                </div>
+
+                <div class="hero-note">
+                    <span class="pulse"></span>
+                    A healthier tomorrow starts today
+                </div>
+
+            </div>
+
+
+            <!-- Hero Illustration -->
+            <div class="hero-art">
+
+                <div class="art-glow"></div>
+
+                <div class="doctor-card">
+
+                    <div class="doctor-photo">✚</div>
+
+                    <div>
+                        <b>Care that puts you first</b>
+                        <small>Patient-centered healthcare</small>
+                    </div>
+
+                    <span class="verified">✓</span>
+
+                </div>
+
+                <div class="floating-stat">
+
+                    <span class="stat-icon">♡</span>
+
+                    <div>
+                        <b>Care for everyone</b>
+                        <small>Here for your health</small>
+                    </div>
+
+                </div>
+
+                <div class="hero-circle">
+                    <span>✚</span>
+                </div>
+
+                <div class="hero-caption">
+                    RHU BULAN <span>•</span> SORSOGON
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRUST STRIP -->
+        <section class="trust-strip">
+
+            <div>
+                <b>01</b>
+                <span>Patient-first care</span>
+            </div>
+
+            <div>
+                <b>02</b>
+                <span>Organized appointments</span>
+            </div>
+
+            <div>
+                <b>03</b>
+                <span>Less time waiting</span>
+            </div>
+
+            <div>
+                <b>04</b>
+                <span>Community wellness</span>
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section about-section">
+
+            <div class="section-kicker">
+                GET TO KNOW US
+            </div>
+
+            <div class="section-heading">
+
+                <h2>
+                    Care rooted in<br>
+                    <em>our community.</em>
+                </h2>
+
+                <p>
+                    The Rural Health Unit of Bulan (RHU-Bulan) serves as the
+                    municipality's frontline, government-owned health hub,
+                    delivering essential medical and preventive healthcare
+                    to the community.
+                </p>
+
+            </div>
+
+
+            <div class="mission-grid">
+
+                <!-- Vision -->
+                <article class="mission-card vision">
+
+                    <span class="card-symbol">◉</span>
+
+                    <span class="card-label">
+                        OUR VISION
+                    </span>
+
+                    <h3>A healthier, stronger Bulan.</h3>
+
+                    <p>
+                        To be a premier, highly responsive, and model rural
+                        health facility cultivating a healthy, vibrant, and
+                        resilient community where every resident has equal
+                        access to holistic healthcare.
+                    </p>
+
+                </article>
+
+
+                <!-- Mission -->
+                <article class="mission-card">
+
+                    <span class="card-symbol">✳</span>
+
+                    <span class="card-label">
+                        OUR MISSION
+                    </span>
+
+                    <h3>Accessible care for all.</h3>
+
+                    <p>
+                        To improve the overall well-being of the local
+                        population by providing accessible, affordable,
+                        and high-quality preventive and curative healthcare.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- SERVICES SECTION -->
+        <section id="services" class="section services-section">
+
+            <div class="section-kicker">
+                HOW WE CAN HELP
+            </div>
+
+            <div class="section-heading">
+
+                <h2>
+                    Our Medical <em>Services</em>
+                </h2>
+
+                <p>
+                    Thoughtful care and essential health services for
+                    every stage of life.
+                </p>
+
+            </div>
+
+
+            <div class="service-grid">
+
+                <article class="service-card">
+
+                    <span class="service-icon">✚</span>
+
+                    <h3>General Consultations</h3>
+
+                    <p>
+                        Daily check-ups, diagnosis, and primary medical care.
+                    </p>
+
+                    <span class="service-no">01</span>
+
+                </article>
+
+
+                <article class="service-card">
+
+                    <span class="service-icon">✧</span>
+
+                    <h3>Dental Services</h3>
+
+                    <p>
+                        Free tooth extractions, minor tooth fillings,
+                        and gum treatment.
+                    </p>
+
+                    <span class="service-no">02</span>
+
+                </article>
+
+
+                <article class="service-card">
+
+                    <span class="service-icon">♡</span>
+
+                    <h3>Pediatrics</h3>
+
+                    <p>
+                        Free routine vaccine services to shield infants
+                        and kids from infectious diseases.
+                    </p>
+
+                    <span class="service-no">03</span>
+
+                </article>
+
+
+                <article class="service-card">
+
+                    <span class="service-icon">❀</span>
+
+                    <h3>Maternal Services</h3>
+
+                    <p>
+                        Comprehensive prenatal and postnatal check-ups
+                        for pregnant and nursing mothers.
+                    </p>
+
+                    <span class="service-no">04</span>
+
+                </article>
+
+
+                <article class="service-card">
+
+                    <span class="service-icon">⌕</span>
+
+                    <h3>Laboratory Services</h3>
+
+                    <p>
+                        Basic minor diagnostic processing and sample collection.
+                    </p>
+
+                    <span class="service-no">05</span>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section contact-section">
+
+            <div class="contact-left">
+
+                <div class="section-kicker">
+                    WE'RE HERE FOR YOU
+                </div>
+
+                <h2>
+                    Let's take care<br>
+                    of <em>your health.</em>
+                </h2>
+
+                <p>
+                    Have a question or need assistance?
+                    Reach out to the clinic.
+                </p>
+
+
+                <!-- Clinic Address -->
+                <div class="contact-detail">
+
+                    <span>⌖</span>
+
+                    <div>
+                        <small>VISIT US</small>
+
+                        <b>
+                            Granado Street, Barangay Obrero, Bulan,
+                            4706 Sorsogon, Philippines
+                        </b>
+                    </div>
+
+                </div>
+
+
+                <!-- Map Placeholder -->
+                <div class="map-placeholder">
+
+                    <div class="map-pin">⌖</div>
+
+                    <div>
+                        <b>RHU Bulan</b>
+                        <small>Granado Street, Barangay Obrero</small>
+                    </div>
+
+                    <span class="map-open">LOCATION</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Contact Information -->
+            <div class="contact-panel">
+
+                <h3>Contact Us</h3>
+
+
+                <div class="contact-row">
+
+                    <span>☎</span>
+
+                    <div>
+                        <small>LANDLINE NUMBER</small>
+
+                        <b>+63 (056) 697-1991</b>
+
+                        <p>
+                            Main office line for scheduling and
+                            administrative requirements.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-row">
+
+                    <span>◉</span>
+
+                    <div>
+                        <small>MOBILE NUMBER</small>
+
+                        <b>+63 998-489-9146</b>
+
+                        <p>
+                            For medicine availability or profiling registrations.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-row">
+
+                    <span>✉</span>
+
+                    <div>
+                        <small>EMAIL ADDRESS</small>
+
+                        <b>payoyotrell@yahoo.com</b>
+
+                        <p>bilazonr@yahoo.com</p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-row">
+
+                    <span>◷</span>
+
+                    <div>
+                        <small>OPERATING HOURS</small>
+
+                        <b>Monday – Friday · 8:00 AM – 5:00 PM</b>
+
+                        <p>Lunch break: 11:00 AM – 12:00 PM</p>
+                    </div>
+
+                </div>
+
+
+                <p class="fb-note">
+                    Follow the RHU-Bulan Facebook Page for official
+                    community announcements, maternal programs,
+                    and dental missions.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- AUTHENTICATION MODAL -->
+    <div id="authModal" class="modal hidden">
+
+        <div class="modal-card auth-card">
+
+            <button class="close" onclick="closeModal()">
+                ×
+            </button>
+
+            <div class="auth-brand">
+
+                <span class="brand-mark">✚</span>
+
+                <b>MEDICARE</b>
+
+            </div>
+
+            <div id="authContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="dashboard hidden">
+
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <a
+                class="brand side-brand"
+                href="#"
+                onclick="openDashboard(); return false"
+            >
+                <span class="brand-mark">✚</span>
+
+                <span>
+                    <b>MEDICARE</b>
+                    <small>QUEUELESS CLINIC</small>
+                </span>
+            </a>
+
+
+            <!-- PATIENT NAVIGATION -->
+            <div id="sidePatient" class="side-links hidden">
+
+                <small class="side-caption">
+                    PATIENT PORTAL
+                </small>
+
+                <button onclick="patientPage('register')" data-page="register">
+                    ▦ <span>Registration</span>
+                </button>
+
+                <button onclick="patientPage('appointment')" data-page="appointment">
+                    ▣ <span>Appointment</span>
+                </button>
+
+                <button onclick="patientPage('queue')" data-page="queue">
+                    ◷ <span>My Queue</span>
+                </button>
+
+                <button onclick="patientPage('profile')" data-page="profile">
+                    ◉ <span>My Profile</span>
+                </button>
+
+            </div>
+
+
+            <!-- STAFF NAVIGATION -->
+            <div id="sideStaff" class="side-links hidden">
+
+                <small class="side-caption">
+                    WORKSPACE
+                </small>
+
+                <button onclick="staffPage('dashboard')" data-page="dashboard">
+                    ▦ <span>Dashboard</span>
+                </button>
+
+                <button onclick="staffPage('queue')" data-page="queue">
+                    ☷ <span>Queue Management</span>
+                </button>
+
+                <button onclick="staffPage('appointments')" data-page="appointments">
+                    ▣ <span>Appointments</span>
+                </button>
+
+                <button onclick="staffPage('patients')" data-page="patients">
+                    ♙ <span>Patients</span>
+                </button>
+
+            </div>
+
+
+            <!-- SIDEBAR BOTTOM -->
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-help">
+
+                    <span>✦</span>
+
+                    <b>Need assistance?</b>
+
+                    <small>
+                        Contact the clinic for support.
+                    </small>
+
+                </div>
+
+                <button class="logout-side" onclick="logout()">
+                    ↪ <span>Log out</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- DASHBOARD MAIN CONTENT -->
+        <div class="dash-main">
+
+
+            <!-- DASHBOARD HEADER -->
+            <header class="dash-top">
+
+                <div>
+
+                    <span class="dash-date" id="dashDate"></span>
+
+                    <h2 id="dashTitle">
+                        Dashboard
+                    </h2>
+
+                </div>
+
+
+                <!-- USER INFORMATION -->
+                <div class="dash-user">
+
+                    <span class="avatar" id="avatar">
+                        U
+                    </span>
+
+                    <div>
+
+                        <b id="dashName">User</b>
+
+                        <small id="dashRole">Patient</small>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- DYNAMIC DASHBOARD CONTENT -->
+            <div id="dashContent" class="dash-content"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="/js/app.js"></script>
+
+</body>
+</html>

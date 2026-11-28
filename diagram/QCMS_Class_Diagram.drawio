@@ -1,0 +1,204 @@
+<mxfile host="65bd71144e">
+    <diagram id="qcms-classes" name="QCMS Class Diagram">
+        <mxGraphModel dx="2285" dy="1638" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2350" pageHeight="1600" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="inh_patient" edge="1" parent="1" source="patient" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=0;strokeColor=#52677A;fontSize=12;labelBackgroundColor=#FFFFFF;" target="user" value="extends">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="inh_doctor" edge="1" parent="1" source="doctor" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=0;strokeColor=#52677A;fontSize=12;labelBackgroundColor=#FFFFFF;" target="staff" value="extends">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="assoc_patient_record" edge="1" parent="1" source="patient" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;startArrow=none;endArrow=none;strokeColor=#52677A;fontSize=12;labelBackgroundColor=#FFFFFF;" target="record" value="patientRecord [0..1]">
+                    <mxGeometry relative="1" x="0.5" y="-1" as="geometry"/>
+                </mxCell>
+                <mxCell id="assoc_patient_appt" edge="1" parent="1" source="patient" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;startArrow=none;endArrow=none;strokeColor=#52677A;fontSize=12;labelBackgroundColor=#FFFFFF;" target="appointment" value="appointments [0..*]">
+                    <mxGeometry relative="1" x="0.55" y="-1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="440" y="680"/>
+                            <mxPoint x="440" y="850"/>
+                            <mxPoint x="920" y="850"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="assoc_patient_queue" edge="1" parent="1" source="patient" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;startArrow=none;endArrow=none;strokeColor=#52677A;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.6;exitDx=0;exitDy=0;" target="queueentry" value="queueEntries [0..*]">
+                    <mxGeometry relative="1" x="0.5468" y="-1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="30" y="700"/>
+                            <mxPoint x="30" y="1500"/>
+                            <mxPoint x="1440" y="1500"/>
+                            <mxPoint x="1440" y="930"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="assoc_record_appt" edge="1" parent="1" source="record" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;startArrow=none;endArrow=none;strokeColor=#52677A;fontSize=12;labelBackgroundColor=#FFFFFF;" target="appointment" value="appointments [0..*]">
+                    <mxGeometry relative="1" x="0.55" y="-1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="460" y="1150"/>
+                            <mxPoint x="900" y="1150"/>
+                            <mxPoint x="900" y="1010"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="assoc_appt_service" edge="1" parent="1" source="appointment" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;startArrow=none;endArrow=none;strokeColor=#52677A;fontSize=12;labelBackgroundColor=#FFFFFF;" target="service" value="medicalService [0..1]">
+                    <mxGeometry relative="1" x="0.595" y="-1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1140" y="650"/>
+                            <mxPoint x="1400" y="650"/>
+                            <mxPoint x="1400" y="250"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="assoc_appt_schedule" edge="1" parent="1" source="appointment" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;startArrow=none;endArrow=none;strokeColor=#52677A;fontSize=12;labelBackgroundColor=#FFFFFF;" target="schedule" value="clinicSchedule [0..1]">
+                    <mxGeometry relative="1" x="0.5379" y="-1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1450" y="910"/>
+                            <mxPoint x="1450" y="225"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="assoc_appt_doctor" edge="1" parent="1" source="appointment" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;startArrow=none;endArrow=none;strokeColor=#52677A;fontSize=12;labelBackgroundColor=#FFFFFF;" target="doctor" value="doctor [0..1]">
+                    <mxGeometry relative="1" x="0.5" y="-1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="900" y="720"/>
+                            <mxPoint x="850" y="720"/>
+                            <mxPoint x="850" y="600"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="assoc_appt_queue" edge="1" parent="1" source="appointment" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;startArrow=none;endArrow=none;strokeColor=#52677A;fontSize=12;labelBackgroundColor=#FFFFFF;" target="queueentry" value="queueEntry [0..1]">
+                    <mxGeometry relative="1" x="0.2706" y="-1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1380" y="815"/>
+                            <mxPoint x="1380" y="815"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dep_userrole" edge="1" parent="1" source="user" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;strokeColor=#888888;fontSize=12;labelBackgroundColor=#FFFFFF;" target="userrole" value="role">
+                    <mxGeometry relative="1" x="0.4237" y="-1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="430" y="300"/>
+                            <mxPoint x="430" y="1380"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dep_staffrole" edge="1" parent="1" source="staff" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;strokeColor=#888888;fontSize=12;labelBackgroundColor=#FFFFFF;" target="userrole" value="role">
+                    <mxGeometry relative="1" x="0.5" y="-1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="850" y="190"/>
+                            <mxPoint x="850" y="1390"/>
+                            <mxPoint x="720" y="1390"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dep_apptstatus" edge="1" parent="1" source="appointment" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;strokeColor=#888888;fontSize=12;labelBackgroundColor=#FFFFFF;" target="apptstatus" value="status">
+                    <mxGeometry relative="1" x="0.5" y="-1" as="geometry"/>
+                </mxCell>
+                <mxCell id="dep_queuestatus" edge="1" parent="1" source="queueentry" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;strokeColor=#888888;fontSize=12;labelBackgroundColor=#FFFFFF;" target="queuestatus" value="status">
+                    <mxGeometry relative="1" x="0.5" y="-1" as="geometry"/>
+                </mxCell>
+                <mxCell id="dep_console_workflow" edge="1" parent="1" source="console" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;strokeColor=#888888;fontSize=12;labelBackgroundColor=#FFFFFF;" target="workflow" value="starts">
+                    <mxGeometry relative="1" x="0.5" y="-1" as="geometry"/>
+                </mxCell>
+                <mxCell id="dep_workflow_patient" edge="1" parent="1" source="workflow" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;strokeColor=#888888;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="patient" value="creates">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1900" y="392"/>
+                            <mxPoint x="1900" y="500"/>
+                            <mxPoint x="225" y="500"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dep_workflow_service" edge="1" parent="1" source="workflow" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;strokeColor=#888888;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.35;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="service" value="creates">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1900" y="410"/>
+                            <mxPoint x="1350" y="410"/>
+                            <mxPoint x="1350" y="250"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dep_workflow_schedule" edge="1" parent="1" source="workflow" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;strokeColor=#888888;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="schedule" value="creates">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1900" y="435"/>
+                            <mxPoint x="1900" y="225"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dep_workflow_appt" edge="1" parent="1" source="workflow" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;strokeColor=#888888;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.8;exitDx=0;exitDy=0;entryX=1;entryY=0.4;entryDx=0;entryDy=0;" target="appointment" value="creates">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1410" y="486"/>
+                            <mxPoint x="1410" y="850"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="dep_workflow_queue" edge="1" parent="1" source="workflow" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=open;strokeColor=#888888;fontSize=12;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.65;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="queueentry" value="creates">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1900" y="460"/>
+                            <mxPoint x="1900" y="610"/>
+                            <mxPoint x="1710" y="610"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=24;fontStyle=1;fontColor=#16324F;" value="QueueLess Clinic Management System - Class Diagram" vertex="1">
+                    <mxGeometry height="55" width="2150" x="100" y="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="domain_heading" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontStyle=1;fontColor=#52677A;" value="DOMAIN CLASSES - CONSOLE WORKFLOW MODEL" vertex="1">
+                    <mxGeometry height="30" width="1700" x="50" y="85" as="geometry"/>
+                </mxCell>
+                <mxCell id="app_heading" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontStyle=1;fontColor=#52677A;" value="APPLICATION ENTRY POINTS - CONSOLE AND HTTP" vertex="1">
+                    <mxGeometry height="30" width="330" x="1940" y="85" as="geometry"/>
+                </mxCell>
+                <mxCell id="user" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#E8F1FA;strokeColor=#5B8DB8;fontSize=13;" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;User&lt;/b&gt;&lt;hr&gt;- id: String&lt;br&gt;- fullName: String&lt;br&gt;- username: String&lt;br&gt;- email: String&lt;br&gt;- mobile: String&lt;br&gt;- passwordHash: String&lt;br&gt;- role: UserRole&lt;hr&gt;+ matchesLoginIdentity(identity): boolean" vertex="1">
+                    <mxGeometry height="280" width="350" x="50" y="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="patient" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#E8F1FA;strokeColor=#5B8DB8;fontSize=13;" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Patient&lt;/b&gt;&lt;hr&gt;- patientInfo: String&lt;br&gt;- category: String&lt;br&gt;- patientRecord: PatientRecord&lt;br&gt;- appointments: List&lt;br&gt;- queueEntries: List&lt;hr&gt;+ registerInformation(info, category)&lt;br&gt;+ manageProfile(info, category)&lt;br&gt;+ attachPatientRecord(record)&lt;br&gt;+ bookAppointment(appointment)&lt;br&gt;+ cancelEligibleAppointment(appointment)&lt;br&gt;~ addQueueEntry(entry)&lt;br&gt;+ viewHistory(): List" vertex="1">
+                    <mxGeometry height="360" width="350" x="50" y="520" as="geometry"/>
+                </mxCell>
+                <mxCell id="record" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#E8F1FA;strokeColor=#5B8DB8;fontSize=13;" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;PatientRecord&lt;/b&gt;&lt;hr&gt;- recordId: String&lt;br&gt;- patientInformation: String&lt;br&gt;- appointmentHistory: String&lt;br&gt;- appointments: List&lt;hr&gt;+ updatePatientInformation(info)&lt;br&gt;+ addAppointment(appointment)" vertex="1">
+                    <mxGeometry height="220" width="350" x="50" y="1040" as="geometry"/>
+                </mxCell>
+                <mxCell id="staff" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=13;" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ClinicStaff&lt;/b&gt;&lt;hr&gt;- id: String&lt;br&gt;- fullName: String&lt;br&gt;- username: String&lt;br&gt;- email: String&lt;br&gt;- mobile: String&lt;br&gt;- passwordHash: String&lt;br&gt;- staffId: String&lt;br&gt;- role: UserRole" vertex="1">
+                    <mxGeometry height="280" width="330" x="500" y="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="doctor" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=13;" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Doctor&lt;/b&gt;&lt;hr&gt;- doctorId: String&lt;hr&gt;+ getDoctorId(): String" vertex="1">
+                    <mxGeometry height="150" width="300" x="515" y="580" as="geometry"/>
+                </mxCell>
+                <mxCell id="userrole" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=13;" value="&amp;lt;&amp;lt;enum&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;UserRole&lt;/b&gt;&lt;hr&gt;PATIENT&lt;br&gt;CLINIC_STAFF&lt;br&gt;DOCTOR" vertex="1">
+                    <mxGeometry height="150" width="220" x="500" y="1300" as="geometry"/>
+                </mxCell>
+                <mxCell id="service" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#F2F2F2;strokeColor=#888888;fontSize=13;" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;MedicalService&lt;/b&gt;&lt;hr&gt;- serviceId: String&lt;br&gt;- name: String&lt;br&gt;- description: String&lt;hr&gt;+ getServiceId(): String&lt;br&gt;+ getName(): String&lt;br&gt;+ getDescription(): String" vertex="1">
+                    <mxGeometry height="220" width="330" x="970" y="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="schedule" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#F2F2F2;strokeColor=#888888;fontSize=13;" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ClinicSchedule&lt;/b&gt;&lt;hr&gt;- operatingDays: String&lt;br&gt;- openingTime: LocalTime&lt;br&gt;- closingTime: LocalTime&lt;br&gt;- lunchBreak: String&lt;br&gt;- availableSlots: String&lt;hr&gt;+ isAvailable(date, time): boolean&lt;br&gt;+ validateAppointmentSlot(date, time)" vertex="1">
+                    <mxGeometry height="250" width="360" x="1480" y="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="appointment" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#DDEBF7;strokeColor=#5B8DB8;fontSize=13;" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Appointment&lt;/b&gt;&lt;hr&gt;- appointmentId: String&lt;br&gt;- date: LocalDate&lt;br&gt;- time: LocalTime&lt;br&gt;- status: AppointmentStatus&lt;br&gt;- walkIn: boolean&lt;br&gt;- patient: Patient&lt;br&gt;- medicalService: MedicalService&lt;br&gt;- clinicSchedule: ClinicSchedule&lt;br&gt;- doctor: Doctor&lt;br&gt;- queueEntry: QueueEntry&lt;hr&gt;+ book()&lt;br&gt;+ updateStatus(status)&lt;br&gt;+ cancel() / complete()&lt;br&gt;+ markNoShow() / reassign()&lt;br&gt;+ assignDoctor(doctor)&lt;br&gt;+ assignQueueEntry(entry)" vertex="1">
+                    <mxGeometry height="410" width="410" x="950" y="690" as="geometry"/>
+                </mxCell>
+                <mxCell id="apptstatus" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=13;" value="&amp;lt;&amp;lt;enum&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;AppointmentStatus&lt;/b&gt;&lt;hr&gt;UPCOMING&lt;br&gt;COMPLETED&lt;br&gt;CANCELLED&lt;br&gt;RE_ASSIGNED&lt;br&gt;NO_SHOW" vertex="1">
+                    <mxGeometry height="190" width="260" x="1025" y="1240" as="geometry"/>
+                </mxCell>
+                <mxCell id="queueentry" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#E2F0D9;strokeColor=#70AD47;fontSize=13;" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;QueueEntry&lt;/b&gt;&lt;hr&gt;- queueNumber: int&lt;br&gt;- queuePosition: int&lt;br&gt;- status: QueueStatus&lt;br&gt;- waitingEstimate: String&lt;br&gt;- patient: Patient&lt;br&gt;- appointment: Appointment&lt;hr&gt;+ updateQueuePosition(position)&lt;br&gt;+ updateWaitingEstimate(estimate)&lt;br&gt;+ startChecking()&lt;br&gt;+ complete() / cancel()&lt;br&gt;+ markNoShow()" vertex="1">
+                    <mxGeometry height="310" width="360" x="1530" y="660" as="geometry"/>
+                </mxCell>
+                <mxCell id="queuestatus" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#FFF2CC;strokeColor=#D6B656;fontSize=13;" value="&amp;lt;&amp;lt;enum&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;QueueStatus&lt;/b&gt;&lt;hr&gt;WAITING&lt;br&gt;CHECKING&lt;br&gt;COMPLETED&lt;br&gt;NO_SHOW&lt;br&gt;CANCELLED" vertex="1">
+                    <mxGeometry height="190" width="240" x="1590" y="1130" as="geometry"/>
+                </mxCell>
+                <mxCell id="console" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#FCE4D6;strokeColor=#D79B77;fontSize=13;" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ClinicConsole&lt;/b&gt;&lt;hr&gt;+ main(args): void&lt;br&gt;Displays menu and starts workflow" vertex="1">
+                    <mxGeometry height="150" width="340" x="1940" y="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="workflow" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#FCE4D6;strokeColor=#D79B77;fontSize=13;" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;ClinicWorkflow&lt;/b&gt;&lt;hr&gt;+ run(): void&lt;br&gt;Creates patient, service, schedule,&lt;br&gt;appointment, and queue entry" vertex="1">
+                    <mxGeometry height="170" width="340" x="1940" y="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="main" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#FCE4D6;strokeColor=#D79B77;fontSize=13;" value="&amp;lt;&amp;lt;class&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;Main&lt;/b&gt;&lt;hr&gt;~ db: Map&lt;br&gt;~ sessions: Map&lt;hr&gt;+ main(args): void&lt;br&gt;~ handle(HttpExchange): void&lt;br&gt;~ load() / save(): void&lt;br&gt;HTTP API with separate Map/JSON data model" vertex="1">
+                    <mxGeometry height="230" width="340" x="1940" y="600" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

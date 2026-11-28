@@ -5,12 +5,12 @@ Each team member is responsible for implementing, validating, testing, and being
 | *Class* | *Owner* |
 |---|---|
 | Main | Dioquino, Carla Jane R. |
-| ClinicConsole | Gimana, Lordilyn G. |
+| ClinicConsole | Gimena, Lordilyn G. |
 | ClinicWorkflow | Gicanal, Fatima G. |
 | User | Gicanal, Fatima G. |
 | UserRole | Gicanal, Fatima G. |
-| MedicalService | Gimana, Lordilyn G. |
-| ClinicSchedule | Gimana, Lordilyn G. |
+| MedicalService | Gimena, Lordilyn G. |
+| ClinicSchedule | Gimena, Lordilyn G. |
 | Patient | Pernito, Jastine A. |
 | PatientRecord | Pernito, Jastine A. |
 | Appointment | Dioquino, Carla Jane R. |
@@ -25,7 +25,7 @@ Each team member is responsible for implementing, validating, testing, and being
 | *Member* | *Assigned Classes* | *Total* |
 |---|---|---:|
 | Gicanal, Fatima G. | ClinicWorkflow, User, UserRole | 3 |
-| Gimana, Lordilyn G. | ClinicConsole, MedicalService, ClinicSchedule | 3 |
+| Gimena, Lordilyn G. | ClinicConsole, MedicalService, ClinicSchedule | 3 |
 | Pernito, Jastine A. | Patient, PatientRecord | 2 |
 | Dioquino, Carla Jane R. | Main, Appointment, AppointmentStatus | 3 |
 | Gidoc, Gille Ann G. | ClinicStaff, Doctor | 2 |

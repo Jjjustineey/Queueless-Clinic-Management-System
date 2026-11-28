@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-16"?>
 <mxfile host="app.diagrams.net" modified="2026-11-28T15:10:55.602Z" agent="Codex" version="24.7.17" type="device">
   <diagram id="qcms-flowchart" name="QCMS Flowchart">
-    <mxGraphModel fold="1" pageWidth="2400" dx="2500" tooltips="1" guides="1" connect="1" grid="1" shadow="0" math="0" pageHeight="3650" dy="3500" gridSize="10" background="#000000" pageScale="1" page="1" arrows="1">
+    <mxGraphModel fold="1" pageWidth="2400" dx="2500" tooltips="1" guides="1" connect="1" grid="1" shadow="0" math="0" pageHeight="3650" dy="3500" gridSize="10" background="#ffffff" pageScale="1" page="1" arrows="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />

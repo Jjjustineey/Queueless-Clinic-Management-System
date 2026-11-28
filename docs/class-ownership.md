@@ -1,9 +1,12 @@
 # Class Ownership
 
-Each team member is responsible for implementing, validating, testing, and being able to explain their assigned classes. The assignments below should be reviewed and agreed on by the group.
+Each team member is responsible for implementing, validating, testing, and being able to explain their assigned classes. The assignments below are a proposed allocation and should be reviewed and agreed on by the group.
 
 | *Class* | *Owner* |
 |---|---|
+| Main | Dioquino, Carla Jane R. |
+| ClinicConsole | Gimana, Lordilyn G. |
+| ClinicWorkflow | Gicanal, Fatima G. |
 | User | Gicanal, Fatima G. |
 | UserRole | Gicanal, Fatima G. |
 | MedicalService | Gimana, Lordilyn G. |
@@ -21,10 +24,10 @@ Each team member is responsible for implementing, validating, testing, and being
 
 | *Member* | *Assigned Classes* | *Total* |
 |---|---|---:|
-| Gicanal, Fatima G. | User, UserRole | 2 |
-| Gimana, Lordilyn G. | MedicalService, ClinicSchedule | 2 |
+| Gicanal, Fatima G. | ClinicWorkflow, User, UserRole | 3 |
+| Gimana, Lordilyn G. | ClinicConsole, MedicalService, ClinicSchedule | 3 |
 | Pernito, Jastine A. | Patient, PatientRecord | 2 |
-| Dioquino, Carla Jane R. | Appointment, AppointmentStatus | 2 |
+| Dioquino, Carla Jane R. | Main, Appointment, AppointmentStatus | 3 |
 | Gidoc, Gille Ann G. | ClinicStaff, Doctor | 2 |
 | Dedase, Jamaica A. | QueueEntry, QueueStatus | 2 |
 
